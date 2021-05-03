@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Mini frameworki**********************************/
+.w50{
+    width: 50%;
+}
+.header{
+    background-color: #140c2e;
+}
+.cor-white{
+    color: white;
+}
+.linkno{
+    text-decoration: none;
+}
+/*************************************************/
+
+
+
+/*estilo do header*****************************/
+
+/* aonde eu estilizei a logo***************************************/
+div.logo {
+    position: relative;
+    top: 5px;
+    width: 220px;
+    height: 70px;
+    background-image: url(../img/logo.png);
+    background-position: center;
+    background-size:cover;
+
+}
+div.logo:hover{
+    cursor: pointer;
+}
+/*********************************************************/
+/* display****************************/
+div.flex{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.left{
+    width: 40%;
+    text-align: left;
+}
+.right{
+    width: 60%;
+    text-align: left;
+   
+}
+
+/*********************************************************/
+
+/*estilo da lista de links (as ul e li)**********************************************/
+div.right ul li{
+    padding: 4px 4px;
+    display: inline-block;
+    list-style-type: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+div.right ul li:hover{
+    background-color:#311e79;
+    border-radius: 20px;
+}
+div.right ul li{
+    position: relative;
+    top: 20px;
+}
+div.right ul li a{
+    box-sizing: border-box;
+    font-size: 20px;
+
+    
+}
+/**********************************************************************************/
+/****************************************/
+@media only screen and (max-width:768px){
+    div.flex{
+        width: 100%;
+        display: block;
+    }
+    
+    div.w50{
+        width: 100%;
+        
+    }
+    div.logo{
+        margin: 0 auto;
+    }
+    div.right{
+        height: 100px;
+        text-align: center;
+
+    }
+    
+
+
+}
