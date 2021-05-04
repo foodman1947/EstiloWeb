@@ -6,6 +6,7 @@
         <link href="css/style.css" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -26,6 +27,55 @@
                     </nav>
                 </div>
             </div>
+            <main>
+                <section class="conteiner" ng-app="myApp" ng-controller="controlinho" '>
+                    <form class="ranges w50 left" >
+                        <h3>horizontal: {{range2}}</h3>
+                        <input type="range" ng-model="range2">
+                        <h3>vertical: {{range3}}</h3>
+                        <input type="range" ng-model="range3">
+                        <h3>escala: {{range5}}</h3>
+                        <input type="range" ng-model="range5">
+                        <h3>blur: {{range4}}</h3>
+                        <input type="range" ng-model="range4">
+                        <h3> opacidade: {{range7}}</h3:>
+                        <input type='range' ng-model='range7'  min="0" max="1" step="0.1">
+                        <h3>cor: {{range6+','+range7}}</h3>
+                        <input  style="background-color: rgba({{range6 +','+range7}});"type="color" min='0' max="1000" ng-model="range6" ng-change="hexToRgb()" value="#9855FF" >
+
+                       
+                    </form>
+                    <div class="right w50 lado">
+                        <div class="estilo lado" style="box-shadow: {{range2 +'px'}} {{range3 + 'px' }} {{range4 +'px'}} {{range5 +'px'}} rgba({{range6 +','+ range7}}"></div>
+                    </div>
+                </section>
+            </main>
+
         </header><!-- header--------------->
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('controlinho',function($scope){
+                $scope.range2 = 10;
+                $scope.range3 = 5;
+                $scope.range5 = 0;
+                $scope.range4 = 0;
+                $scope.range7 = 1;
+                $scope.range6 = '0,0,0';                
+                $scope.hexToRgb = function() {
+                    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec($scope.range6);
+                    $scope.range6 = parseInt(result[1], 16) +','+ parseInt(result[2], 16)+','+ parseInt(result[3], 16);
+                }            
+    
+            }
+               
+
+
+            );
+           
+           
+
+    </script>
+
     </body>
+
 </html>

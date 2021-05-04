@@ -3,18 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+body,html{
+    height: 100%;
+}
 /*Mini frameworki**********************************/
 .w50{
     width: 50%;
 }
 .header{
     background-color: #140c2e;
+    border-bottom: 4px #020202 solid
 }
 .cor-white{
     color: white;
 }
 .linkno{
     text-decoration: none;
+}
+div.lado{
+    padding-right: 100px;
 }
 /*************************************************/
 
@@ -51,9 +58,11 @@ div.flex{
 }
 .right{
     width: 60%;
-    text-align: left;
+    text-align: right;
+    padding: 0px 10px;
    
 }
+
 
 /*********************************************************/
 
@@ -100,5 +109,63 @@ div.right ul li a{
     }
     
 
-
 }
+
+/**** conteudo ************************************************/
+
+/* conteiner*******************************/
+
+section.conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    background-color: #240e6e;
+    padding:80px 0px 80px 80px;
+}
+
+
+form.ranges{
+    text-align: center;
+    background-color:#026ADB ;
+    box-shadow: 8px 4px 21px -3px rgba(0,0,0,0.95);
+}
+form.ranges input{
+    width: 80%;
+    padding: 10px 0px;
+}
+form.ranges input[type='color']{
+    width: 50%;
+    height: 110px;
+}
+
+
+div.estilo{
+    border: 4px gray solid;
+    display: inline-block;
+    width:50%;
+    height: 200px;
+    background-color: #026ADB;
+}
+
+/********************************************/
+@media only screen and (max-width:768px){
+    section.conteiner{
+        width: 100%;
+        padding:0px 0px 0px 0px;
+        height: 900px;
+
+    }
+    form.ranges{
+        width: 100%;
+        
+    }
+    div.estilo{
+        border: 4px gray solid;
+        display: inline-block;
+        width:80%;
+        height: 200px;
+        background-color: yellow;
+        margin-top: 13px;
+    }
